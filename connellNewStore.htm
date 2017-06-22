@@ -1,0 +1,25 @@
+<html> 
+<head> 
+<title>Add New Store</title> 
+<script src="jquery-1.11.1.js"></script>
+<script>
+$(document).ready(function(){
+$("#enterStore").click(function() {
+$.get("connellNewStore.php", {storename:$('#storename').val(), location:$('#location').val()},
+function(result){
+$("#div1").html(result);
+});
+});
+});
+</script>
+</head>
+<body>
+
+<p>Lets add a new store selling vitamins!</p>
+<p>Store Name: <input type="text" id="storename"></p>
+<p>Store Location: <input type="text" id="location"></p>
+<p><input type="button" value="Enter Store" id="enterStore"></p>
+<div id="div1"></div>
+<a href="http://66.195.8.98/~connellr394/connellProjMain.htm">Go Back to Main Page</a>
+</body>
+</html>

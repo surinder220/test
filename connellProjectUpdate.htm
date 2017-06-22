@@ -1,0 +1,27 @@
+<html> 
+<head> 
+<title>Update an Existing Vitamin</title> 
+<script src="jquery-1.11.1.js"></script>
+<script>
+$(document).ready(function(){
+$( window ).load(function() {
+$.ajax({url: "connellProjectUpdateA.php", success: function(result){
+$("#div1").html(result);
+}});
+});
+$("#vitaminSelect").click(function() {
+$.get("connellProjectUpdate.php", {vitaminid:$('#vitaminid').val(), name:$('#name').val(), benefits:$('#benefits').val(), dosage:$('#dosage').val(), brand:$('#brand').val()}, function(result){ 
+$("#div1").html(result);
+})
+});
+});
+</script>
+</head>
+</head>
+<body>
+
+<div id="div1"></div>
+<p><input type="button" value="Enter Vitamin" id="vitaminSelect"></p>
+<a href="http://66.195.8.98/~connellr394/connellProjMain.htm">Go Back to Main Page</a>
+</body>
+</html>

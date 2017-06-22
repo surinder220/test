@@ -1,0 +1,27 @@
+<html> 
+<head> 
+<title>Update an Store Location</title> 
+<script src="jquery-1.11.1.js"></script>
+<script>
+$(document).ready(function(){
+$( window ).load(function() {
+$.ajax({url: "connellStoreLocA.php", success: function(result){
+$("#div1").html(result);
+}});
+});
+$("#storeSelect").click(function() {
+$.get("connellStoreLoc.php", {storename:$('#storename').val(), location:$('#location').val()}, function(result){ 
+$("#div1").html(result);
+})
+});
+});
+</script>
+</head>
+</head>
+<body>
+
+<div id="div1"></div>
+<p><input type="button" value="Enter Store" id="storeSelect"></p>
+<a href="http://66.195.8.98/~connellr394/connellProjMain.htm">Go Back to Main Page</a>
+</body>
+</html>

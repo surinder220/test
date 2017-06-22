@@ -1,0 +1,32 @@
+<html> 
+<head> 
+<title>Add New Vitamin</title> 
+<script src="jquery-1.11.1.js"></script>
+<script>
+$(document).ready(function(){
+$("#enterVitamin").click(function() {
+$.get("connellProjectInsert.php", {name:$('#name').val(), benefits:$('#benefits').val(), dosage:$('#dosage').val(), brand:$('#brand').val()},
+function(result){
+$("#div1").html(result);
+});
+});
+});
+</script>
+</head>
+<body>
+
+<p>Lets add a new vitamin entry!</p>
+<p>Vitamin Name (ex: A or B): <input type="text" id="name"></p>
+<p>BENEFITS of the Vitamin: <input type="text" id="benefits"></p>
+<p>DOSAGE: <input type="text" id="dosage"></p>
+<p>BRANDS Sold In:
+<select id="brand">
+      <option value="1">Swanson</option>
+      <option value="2">Nature Made</option>
+</select>
+</p>
+<p><input type="button" value="Enter Vitamin" id="enterVitamin"></p>
+<div id="div1"></div>
+<a href="http://66.195.8.98/~connellr394/connellProjMain.htm">Go Back to Main Page</a>
+</body>
+</html>
